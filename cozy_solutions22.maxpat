@@ -81,7 +81,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 2,
-					"outlettype" : [ "jit_matrix", "jit_matrix" ],
+					"outlettype" : [ "", "jit_gl_texture" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
@@ -123,11 +123,92 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"annotation" : "## View or monitor video input ##",
+									"bgmode" : 1,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-19",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "vz.viewr.maxpat",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"offset" : [ 0.0, 0.0 ],
+									"patching_rect" : [ 796.0, 426.0, 341.0, 289.0 ],
+									"prototypename" : "pixl",
+									"varname" : "viewr",
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 727.0, 614.0, 150.0, 20.0 ],
+									"text" : "like jit op"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"annotation" : "## Perform Photoshop image-style video mixing ##",
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-1",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "vz.modemixr.maxpat",
+									"numinlets" : 4,
+									"numoutlets" : 1,
+									"offset" : [ 0.0, 0.0 ],
+									"outlettype" : [ "jit_gl_texture" ],
+									"patching_rect" : [ 520.0, 555.0, 178.0, 130.0 ],
+									"varname" : "vz.modemixr",
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"annotation" : "## Convert Jitter matrix input to texture output ##",
+									"bgmode" : 1,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-3",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "vz.matrix2texture.maxpat",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"offset" : [ 0.0, 0.0 ],
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 136.0, 514.0, 182.0, 120.0 ],
+									"prototypename" : "pixl",
+									"varname" : "matrix2texture",
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-34",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 1,
-									"outlettype" : [ "jit_matrix" ],
+									"outlettype" : [ "jit_gl_texture" ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
@@ -139,7 +220,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 34.0, 99.0, 1199.0, 849.0 ],
+										"rect" : [ 34.0, 99.0, 1444.0, 849.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -209,9 +290,9 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
-													"outlettype" : [ "jit_matrix", "" ],
-													"patching_rect" : [ 136.578487257957477, 223.731486816406232, 224.0, 22.0 ],
-													"text" : "jit.grab @planecount 4 @dim 1920 1080"
+													"outlettype" : [ "jit_gl_texture", "" ],
+													"patching_rect" : [ 136.578487257957477, 223.731486816406232, 326.0, 22.0 ],
+													"text" : "jit.grab @planecount 4 @dim 1920 1080 @output_texture 1"
 												}
 
 											}
@@ -420,7 +501,30 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 1 ],
+									"order" : 1,
+									"source" : [ "obj-34", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-85", 0 ],
+									"order" : 0,
 									"source" : [ "obj-34", 0 ]
 								}
 
@@ -443,7 +547,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-84", 0 ],
+									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-48", 0 ]
 								}
 
@@ -489,7 +593,8 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p videos"
+					"text" : "p videos",
+					"varname" : "videos"
 				}
 
 			}
@@ -3677,20 +3782,20 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 655.0, 475.0, 517.0, 35.0 ],
-									"text" : "16 12 7 20 52 45 60 18 2 54 34 49 30 48 38 34 50 33 20 44 40 8 1 35 3 24 6 63 19 10 41 40 41 44 41 58 12 43 62 53 35 40 25 56 45 39 24 55 0 16 21 33 17 63 7 49 14 51 16 5 0 8 59 51"
+									"text" : "22 47 0 18 26 28 19 59 1 46 39 63 15 28 22 10 15 20 27 57 25 5 47 34 62 58 45 20 22 11 54 25 8 2 14 25 36 12 17 25 18 30 42 49 33 9 7 16 31 60 61 1 35 53 15 57 27 62 24 1 12 10 56 57"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-27",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 655.0, 435.0, 517.0, 35.0 ],
-									"text" : "26 1 10 53 22 60 10 10 0 21 45 41 25 28 58 20 34 27 32 47 0 23 8 29 39 5 17 51 19 12 16 60 56 55 2 12 34 4 32 56 59 55 31 19 36 52 26 19 52 39 49 50 16 48 34 11 5 51 23 13 40 58 47 34"
+									"patching_rect" : [ 655.0, 435.0, 518.0, 35.0 ],
+									"text" : "43 14 12 29 4 36 35 25 26 6 20 58 17 51 26 48 59 21 7 25 16 3 28 60 57 24 11 27 6 1 40 27 57 59 21 29 4 37 25 21 2 15 6 0 17 27 44 1 33 0 40 44 36 11 25 58 47 23 25 55 41 3 22 27"
 								}
 
 							}
@@ -3703,20 +3808,20 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 655.0, 389.0, 517.0, 35.0 ],
-									"text" : "36 28 5 39 59 31 25 35 60 28 53 51 5 32 38 23 38 54 36 53 44 34 59 28 15 8 12 7 18 24 20 22 15 20 53 6 5 9 17 27 41 36 63 63 3 8 51 19 53 23 31 17 16 49 19 57 63 22 59 8 16 26 33 10"
+									"text" : "18 41 23 9 57 4 28 48 42 45 47 39 42 46 12 8 14 50 48 4 15 45 19 20 56 53 17 42 30 44 9 30 23 30 35 43 37 28 8 53 30 3 47 11 16 18 60 3 58 46 18 2 54 6 20 26 62 4 17 43 58 17 12 7"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-23",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 655.0, 342.0, 517.0, 35.0 ],
-									"text" : "23 35 34 27 23 49 13 11 20 49 32 35 14 31 46 4 28 57 63 40 19 63 61 37 17 41 15 41 11 41 22 31 39 41 16 13 51 23 48 15 14 20 54 18 34 41 36 1 47 48 63 33 16 36 48 13 25 28 25 15 42 25 59 54"
+									"patching_rect" : [ 655.0, 342.0, 519.0, 35.0 ],
+									"text" : "0 54 1 55 30 11 30 33 55 7 50 46 49 23 37 29 14 30 63 62 32 0 9 31 39 63 40 21 7 36 26 58 33 56 29 63 22 3 34 56 7 54 38 45 38 11 59 42 44 62 32 20 41 22 46 31 62 36 48 23 58 28 37 59"
 								}
 
 							}
@@ -4189,7 +4294,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 99.0, 1444.0, 849.0 ],
+						"rect" : [ 34.0, 99.0, 1202.0, 849.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4217,7 +4322,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-34",
@@ -7060,7 +7164,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-95", 1 ],
-					"midpoints" : [ 320.984851837158203, 624.0, 320.984851837158203, 624.0 ],
 					"source" : [ "obj-87", 1 ]
 				}
 
@@ -7109,6 +7212,19 @@
 			"obj-6::obj-18" : [ "live.gain~[5]", "live.gain~", 0 ],
 			"obj-86::obj-40" : [ "live.gain~", "live.gain~", 0 ],
 			"obj-86::obj-41" : [ "live.gain~[1]", "live.gain~", 0 ],
+			"obj-87::obj-19::obj-20" : [ "letterbox_menu", "letterbox_menu", 0 ],
+			"obj-87::obj-19::obj-37" : [ "aspect_menu", "aspect_menu", 0 ],
+			"obj-87::obj-1::obj-29" : [ "range[4]", "range", 0 ],
+			"obj-87::obj-1::obj-31::obj-23" : [ "gswitch2[5]", "gswitch2", 0 ],
+			"obj-87::obj-1::obj-32::obj-23" : [ "gswitch2[4]", "gswitch2", 0 ],
+			"obj-87::obj-1::obj-36" : [ "pictctrl[5]", "pictctrl[1]", 0 ],
+			"obj-87::obj-1::obj-37" : [ "umenu[4]", "umenu", 0 ],
+			"obj-87::obj-1::obj-38" : [ "mix-amount", "Amount", 0 ],
+			"obj-87::obj-1::obj-51" : [ "pictctrl[1]", "pictctrl[1]", 0 ],
+			"obj-87::obj-3::obj-14" : [ "live.toggle[3]", "live.toggle[2]", 0 ],
+			"obj-87::obj-3::obj-19" : [ "umenu[11]", "umenu", 0 ],
+			"obj-87::obj-3::obj-22" : [ "range[1]", "range", 0 ],
+			"obj-87::obj-3::obj-5::obj-23" : [ "gswitch2[3]", "gswitch2", 0 ],
 			"parameterbanks" : 			{
 				"0" : 				{
 					"index" : 0,
@@ -7121,6 +7237,10 @@
 			"parameter_overrides" : 			{
 				"obj-6::obj-13" : 				{
 					"parameter_longname" : "live.gain~[6]"
+				}
+,
+				"obj-87::obj-1::obj-37" : 				{
+					"parameter_longname" : "umenu[4]"
 				}
 
 			}
@@ -7148,9 +7268,27 @@
 				"type" : "iLaX"
 			}
 , 			{
+				"name" : "data-handler.maxpat",
+				"bootpath" : "C74:/packages/Vizzie/patchers/utils",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "drumseq_new.maxpat",
 				"bootpath" : "~/Desktop/Myclasses/Interactive Music Systems/interactive-music-system",
 				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "exact_menu.maxpat",
+				"bootpath" : "C74:/packages/Vizzie/patchers/utils",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "snapshot_UI.maxpat",
+				"bootpath" : "C74:/packages/Vizzie/patchers/utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -7161,14 +7299,50 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "vizzie-datatexconvert.js",
+				"bootpath" : "C74:/packages/Vizzie/code",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "vizzie-global.js",
 				"bootpath" : "C74:/packages/Vizzie/code",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
+				"name" : "vz.matrix2texture.maxpat",
+				"bootpath" : "C74:/packages/Vizzie/patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "vz.modemixr.maxpat",
+				"bootpath" : "C74:/packages/Vizzie/patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "vz.texture2matrix.maxpat",
 				"bootpath" : "C74:/packages/Vizzie/patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "vz.viewr.maxpat",
+				"bootpath" : "C74:/packages/Vizzie/patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "vzgl-context.maxpat",
+				"bootpath" : "C74:/packages/Vizzie/patchers/utils",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "vzgl-disable.maxpat",
+				"bootpath" : "C74:/packages/Vizzie/patchers/utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -7182,6 +7356,12 @@
 				"name" : "vzgl-outputdim.maxpat",
 				"bootpath" : "C74:/packages/Vizzie/patchers/utils",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "windowresize.js",
+				"bootpath" : "C74:/packages/Vizzie/code",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
  ],
