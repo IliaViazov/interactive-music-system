@@ -1221,8 +1221,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 341.484849214553833, 734.666651010513306, 109.0, 22.0 ],
-					"text" : "jit.noise 1920 1080"
+					"patching_rect" : [ 341.484849214553833, 734.666651010513306, 146.0, 22.0 ],
+					"text" : "jit.noise 4 сhar 1920 1080"
 				}
 
 			}
@@ -1292,7 +1292,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 99.0, 1444.0, 849.0 ],
+						"rect" : [ 70.0, 854.0, 1444.0, 776.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3667,6 +3667,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-31",
@@ -3687,8 +3688,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 655.0, 475.0, 517.0, 35.0 ],
-									"text" : "37 5 37 1 32 21 18 14 48 8 50 36 11 3 17 34 37 23 6 51 23 16 63 57 8 0 33 34 30 54 34 60 8 43 49 26 43 13 61 41 56 24 44 63 40 21 47 50 58 41 30 48 42 21 55 15 34 20 25 0 61 23 42 58"
+									"patching_rect" : [ 655.0, 491.0, 517.0, 35.0 ],
+									"text" : "32 18 29 18 63 62 28 26 29 18 23 32 18 35 25 3 38 30 16 53 46 23 49 54 7 32 25 4 23 40 4 55 37 27 3 0 9 45 7 20 47 40 55 15 63 58 52 28 46 2 8 25 59 9 35 35 15 22 5 43 2 27 48 42"
 								}
 
 							}
@@ -3700,21 +3701,21 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 655.0, 435.0, 517.0, 35.0 ],
-									"text" : "24 43 15 29 38 24 12 28 0 9 61 41 43 39 29 36 16 37 15 20 47 46 31 20 40 61 6 37 41 39 12 10 26 14 62 10 48 25 9 35 22 5 39 35 17 61 13 30 5 63 3 58 38 53 6 49 14 19 18 9 32 37 34 50"
+									"patching_rect" : [ 655.0, 448.0, 517.0, 35.0 ],
+									"text" : "2 49 33 10 60 36 42 59 12 59 6 20 37 28 63 63 44 7 60 48 15 24 39 56 59 23 11 40 20 37 57 45 41 32 11 37 55 55 10 21 23 23 50 35 61 2 9 7 38 18 15 12 4 28 10 6 7 3 32 46 50 41 32 9"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-25",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 655.0, 389.0, 517.0, 35.0 ],
-									"text" : "15 12 57 52 44 31 36 6 61 30 57 14 63 51 24 36 29 23 3 45 60 52 13 6 1 12 16 28 27 16 18 7 43 30 10 34 55 0 42 48 3 56 56 51 47 39 59 17 25 50 2 50 13 35 35 25 37 23 35 35 48 46 54 45"
+									"patching_rect" : [ 655.0, 395.0, 517.0, 35.0 ],
+									"text" : "2 30 44 38 60 3 3 13 52 35 58 45 62 45 20 12 33 11 15 12 25 61 47 44 1 12 14 54 43 17 57 16 28 0 5 63 44 17 10 44 24 63 54 45 55 46 3 58 7 37 57 44 24 38 13 40 40 46 46 17 50 3 28 29"
 								}
 
 							}
@@ -3726,8 +3727,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 655.0, 342.0, 517.0, 35.0 ],
-									"text" : "24 49 2 61 22 0 1 13 58 25 3 18 41 40 26 59 15 47 29 53 16 4 46 40 30 25 62 26 20 38 35 47 26 59 55 51 36 37 48 44 20 31 10 55 5 63 14 39 25 49 42 60 47 43 24 51 20 11 34 51 11 63 28 22"
+									"patching_rect" : [ 655.0, 342.0, 511.0, 49.0 ],
+									"text" : "61 11 23 2 58 62 47 63 3 25 49 59 62 56 27 60 13 35 46 46 34 5 11 32 46 48 18 21 24 2 44 2 5 21 39 30 27 5 45 62 31 34 43 30 1 16 50 54 35 25 55 36 5 55 34 16 50 32 62 63 62 34 36 24"
 								}
 
 							}
@@ -3812,19 +3813,6 @@
 									"outlettype" : [ "bang", "bang", "bang", "bang", "" ],
 									"patching_rect" : [ 537.328266263008118, 314.0, 71.0, 22.0 ],
 									"text" : "sel 0 4 8 12"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontsize" : 24.0,
-									"id" : "obj-2",
-									"linecount" : 12,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 16.0, 13.557823181152344, 286.0, 328.0 ],
-									"text" : "Sorry for russian. I made this part for scientific conference in Russia. There is a generating of glued pieces sequence. I make the 16 vectors with 64 values (for each square of video) and put them inside jit.matrix with 16 planes. After I iterate every plane as a list and make routing."
 								}
 
 							}
@@ -4228,7 +4216,20 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-15",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 62.0, 518.0, 58.0, 22.0 ],
+									"text" : "loadbang"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-34",
 									"maxclass" : "newobj",
@@ -4660,6 +4661,7 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
+										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-1",
@@ -5210,6 +5212,7 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
+										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-12",
@@ -5398,6 +5401,7 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
+										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-14",
@@ -6354,6 +6358,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-18", 0 ],
 									"source" : [ "obj-14", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-10", 0 ],
+									"source" : [ "obj-15", 0 ]
 								}
 
 							}
