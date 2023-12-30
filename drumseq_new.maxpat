@@ -180,7 +180,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 429.0, 100.0, 1049.0, 849.0 ],
+						"rect" : [ 429.0, 110.0, 1049.0, 732.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -208,15 +208,16 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-3",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "int" ],
-									"patching_rect" : [ 232.0, 69.0, 116.0, 22.0 ],
-									"text" : "random 2000 15000"
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 232.0, 69.0, 154.0, 22.0 ],
+									"text" : "expr random (5000\\, 15000)"
 								}
 
 							}
